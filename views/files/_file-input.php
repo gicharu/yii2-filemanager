@@ -21,12 +21,11 @@ if (!empty($folderArray)) {
 
 $script = <<< SCRIPT
     function (event, params) {
-        console.log(params);
-        params.form.append('uploadType', {$uploadType});
+        params.formdata.append('uploadType', {$uploadType});
         if(jQuery('select[name="Files[folder_id]"]').val() != undefined) {
-            params.form.append('uploadTo', jQuery('select[name="Files[folder_id]"]').val());        
+            params.formdata.append('uploadTo', jQuery('select[name="Files[folder_id]"]').val());        
         } else {
-            params.form.append('uploadTo', '{$model->folder_id}'); 
+            params.formdata.append('uploadTo', '{$model->folder_id}'); 
         }
     }
 SCRIPT;

@@ -31,7 +31,7 @@ $script = <<< SCRIPT
         }
     }
 SCRIPT;
-$url = "<?= Url::to(['upload'])); ?>";
+$url = "index.php?r=filemanager\u002Ffiles\u002Fupload";
 echo $form->field($model, 'upload_file[]')->widget(FileInput::classname(), [
     'options' => [
         'multiple' => $multiple,

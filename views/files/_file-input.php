@@ -4,6 +4,8 @@ use dpodium\filemanager\FilemanagerAsset;
 use kartik\widgets\ActiveForm;
 use kartik\widgets\FileInput;
 use yii\helpers\Url;
+use yii\web\JsExpression;
+
 
 if ($uploadType == \dpodium\filemanager\components\Filemanager::TYPE_MODAL) {
     FilemanagerAsset::register($this);
@@ -35,7 +37,7 @@ echo $form->field($model, 'upload_file[]')->widget(FileInput::classname(), [
         'accept' => implode(',', \Yii::$app->controller->module->acceptedFilesType)
     ],
     'pluginOptions' => [
-        'uploadUrl' => Url::to(['upload']),
+        'uploadUrl' => new JsExpression(Url::to(['upload'])),
         'browseClass' => 'btn btn-sm btn-success',
         'uploadClass' => 'btn btn-sm btn-info',
         'removeClass' => 'btn btn-sm btn-danger',

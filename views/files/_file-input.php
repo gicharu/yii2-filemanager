@@ -31,13 +31,14 @@ $script = <<< SCRIPT
         }
     }
 SCRIPT;
+$url = new JsExpression(Url::to(['upload']));
 echo $form->field($model, 'upload_file[]')->widget(FileInput::classname(), [
     'options' => [
         'multiple' => $multiple,
         'accept' => implode(',', \Yii::$app->controller->module->acceptedFilesType)
     ],
     'pluginOptions' => [
-        'uploadUrl' => new JsExpression(Url::to(['upload'])),
+        'uploadUrl' => "$url",
         'browseClass' => 'btn btn-sm btn-success',
         'uploadClass' => 'btn btn-sm btn-info',
         'removeClass' => 'btn btn-sm btn-danger',

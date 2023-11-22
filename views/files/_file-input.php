@@ -35,7 +35,7 @@ echo $form->field($model, 'upload_file[]')->widget(FileInput::classname(), [
         'accept' => implode(',', \Yii::$app->controller->module->acceptedFilesType)
     ],
     'pluginOptions' => [
-        'uploadUrl' => Url::to(['upload']),
+        'uploadUrl' => rawurlencode(Url::to(['upload'])),
         'browseClass' => 'btn btn-sm btn-success',
         'uploadClass' => 'btn btn-sm btn-info',
         'removeClass' => 'btn btn-sm btn-danger',

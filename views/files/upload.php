@@ -3,8 +3,8 @@
 use dpodium\filemanager\components\Filemanager;
 use yii\helpers\Html;
 
-$this->title = Yii::t('filemanager', 'Upload New Media');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('filemanager', 'Media Gallery'), 'url' => ['files/index']];
+$this->title = Yii::t('filemanager', 'Upload files');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('filemanager', 'files'), 'url' => ['files/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-header">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <i class="fa fa-info-circle"></i>
                 <?php
-                echo Yii::t('filemanager', 'Click {link} to create a folder to upload media', [
+                echo Yii::t('filemanager', 'Click {link} to create a folder to upload files', [
                     'link' => Html::a(Yii::t('filemanager', 'here'), ['/filemanager/folders/create'], ['target' => '_blank'])
                 ]);
                 ?>

@@ -10,7 +10,7 @@ if ($uploadType == \dpodium\filemanager\components\Filemanager::TYPE_MODAL) {
 }
 
 $form = ActiveForm::begin([
-            'action' => \Yii::$app->urlManager->createUrl(['/filemanager/files/upload']),
+            'action' => Url::to(['/filemanager/files/upload']),
             'id' => 'fm-upload-form',
             'options' => ['enctype' => 'multipart/form-data'] // important
         ]);
